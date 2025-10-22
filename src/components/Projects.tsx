@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import tastedApp from "@/assets/tasted-app.png";
 import jogatinaApp from "@/assets/jogatina-app.png";
 
@@ -6,16 +8,15 @@ const Projects = () => {
   const projects = [
     {
       title: "Tasted: Drink Notes",
-      description:
-        "Um app elegante para registrar e explorar suas experiências com drinks. Capture sabores, aromas e momentos especiais com um design sofisticado e intuitivo.",
+      description: "Jornal sensorial de drinks. Simples, elegante e pessoal.",
       image: tastedApp,
-      appStoreUrl: "https://apps.apple.com",
+      link: "/projects/tasted",
     },
     {
       title: "Jogatina",
-      description:
-        "Organize suas noites de jogos de tabuleiro com estilo. Gerencie coleções, agende partidas e mantenha um histórico das suas aventuras lúdicas.",
+      description: "Companheiro para suas noites de board games com amigos.",
       image: jogatinaApp,
+      link: "/projects/jogatina",
       comingSoon: true,
     },
   ];
@@ -40,6 +41,21 @@ const Projects = () => {
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center pt-8 animate-fade-in">
+            <div className="bg-card border border-border rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Quer conversar sobre um projeto?
+              </h3>
+              <p className="text-foreground/70 mb-6">
+                Respostas objetivas, prazos realistas e obsessão por detalhes.
+              </p>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+                <Link to="/contact">Enviar mensagem</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

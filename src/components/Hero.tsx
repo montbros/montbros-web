@@ -1,15 +1,9 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.png";
 
 const Hero = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -36,38 +30,29 @@ const Hero = () => {
           </p>
 
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Dois irmãos. Um designer e um desenvolvedor. Criando apps iOS com design emocional e alma.
+            Estúdio independente que cria apps iOS com design emocional e atenção obsessiva aos detalhes.
           </p>
 
           <div className="pt-4 md:pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              onClick={() => scrollToSection("projects")}
+              asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth"
             >
-              Ver Projetos
-              <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-smooth" />
+              <Link to="/contact">Fale com a MontBros</Link>
             </Button>
 
             <Button
-              onClick={() => scrollToSection("about")}
+              asChild
               size="lg"
               variant="outline"
               className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-smooth"
             >
-              Conheça o Estúdio
+              <Link to="/projects">Ver projetos</Link>
             </Button>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <button
-          onClick={() => scrollToSection("about")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-          aria-label="Scroll down"
-        >
-          <ArrowDown className="w-6 h-6 text-primary" />
-        </button>
       </div>
     </section>
   );

@@ -1,15 +1,16 @@
-import { ExternalLink, Apple } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
-  appStoreUrl?: string;
+  link?: string;
   comingSoon?: boolean;
 }
 
-const ProjectCard = ({ title, description, image, appStoreUrl, comingSoon }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, link, comingSoon }: ProjectCardProps) => {
   return (
     <div className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-elegant transition-smooth animate-scale-in">
       {/* Image */}
@@ -36,21 +37,16 @@ const ProjectCard = ({ title, description, image, appStoreUrl, comingSoon }: Pro
           {description}
         </p>
 
-        {appStoreUrl && !comingSoon && (
+        {link && (
           <Button
             asChild
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth group/btn"
+            variant={comingSoon ? "outline" : "default"}
+            className={comingSoon ? "" : "w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth group/btn"}
           >
-            <a
-              href={appStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
-            >
-              <Apple className="w-5 h-5" />
-              Ver na App Store
-              <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-smooth" />
-            </a>
+            <Link to={link} className="flex items-center justify-center gap-2">
+              {comingSoon ? "Em Breve" : "Saiba mais"}
+              {!comingSoon && <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-smooth" />}
+            </Link>
           </Button>
         )}
       </div>

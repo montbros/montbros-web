@@ -1,26 +1,21 @@
-import { Lightbulb, Target, Users, Sparkles } from "lucide-react";
+import { Lightbulb, Sparkles, Heart } from "lucide-react";
 
 const Philosophy = () => {
   const values = [
     {
       icon: Lightbulb,
-      title: "Design com Propósito",
+      title: "Design com propósito",
       description: "Cada elemento visual tem uma razão de existir. Nada é aleatório.",
     },
     {
-      icon: Target,
-      title: "Foco em Nichos",
-      description: "Preferimos criar para comunidades específicas que amamos e entendemos.",
-    },
-    {
       icon: Sparkles,
-      title: "Tecnologia com Sentimento",
-      description: "Código bem escrito e experiências que emocionam andam juntos.",
+      title: "Simplicidade funcional",
+      description: "Removemos o desnecessário para destacar o essencial.",
     },
     {
-      icon: Users,
-      title: "Proximidade com Usuários",
-      description: "Ouvimos, aprendemos e evoluímos com feedback real de quem usa nossos apps.",
+      icon: Heart,
+      title: "Tecnologia com sentimento",
+      description: "Código bem escrito e experiências que emocionam andam juntos.",
     },
   ];
 
@@ -40,7 +35,7 @@ const Philosophy = () => {
           </div>
 
           {/* Values Grid */}
-          <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (

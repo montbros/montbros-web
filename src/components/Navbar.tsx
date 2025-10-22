@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,20 +16,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   const navItems = [
-    { label: "Home", id: "home" },
-    { label: "About", id: "about" },
-    { label: "Projects", id: "projects" },
-    { label: "Philosophy", id: "philosophy" },
-    { label: "Contact", id: "contact" },
+    { label: "Projects", path: "/projects" },
+    { label: "About", path: "/about" },
+    { label: "Contact", path: "/contact" },
   ];
 
   return (
@@ -39,23 +35,23 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
+          <Link
+            to="/"
             className="text-xl md:text-2xl font-bold tracking-tight hover:text-primary transition-smooth"
           >
             MontBros
-          </button>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Button
-                key={item.id}
+                key={item.path}
                 variant="ghost"
-                onClick={() => scrollToSection(item.id)}
+                asChild
                 className="text-foreground/80 hover:text-primary hover:bg-primary/10 transition-smooth"
               >
-                {item.label}
+                <Link to={item.path}>{item.label}</Link>
               </Button>
             ))}
           </div>
@@ -76,13 +72,13 @@ const Navbar = () => {
         <div className="md:hidden bg-card border-t border-border animate-fade-in">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+              <Link
+                key={item.path}
+                to={item.path}
                 className="block w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-smooth"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

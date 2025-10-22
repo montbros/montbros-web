@@ -16,22 +16,21 @@ const About = () => {
           {/* Story */}
           <div className="prose prose-lg md:prose-xl prose-invert max-w-none animate-fade-in-up">
             <p className="text-foreground/90 leading-relaxed text-center">
-              A MontBros nasceu da paixão de dois irmãos por criar experiências digitais que tocam as pessoas.
-              Um designer obcecado por detalhes e emoção. Um desenvolvedor apaixonado por código limpo e funcionalidade.
-              Juntos, criamos apps que são muito mais do que ferramentas — são extensões da vida dos nossos usuários.
+              Dois irmãos. Um designer e um desenvolvedor criando apps iOS com propósito e alma autoral.
             </p>
           </div>
 
-          {/* Mission */}
+          {/* Values */}
           <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-card animate-scale-in">
             <div className="flex items-center gap-3 mb-6">
               <Heart className="w-8 h-8 text-primary" />
-              <h3 className="text-2xl md:text-3xl font-semibold">Nossa Missão</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold">Valores</h3>
             </div>
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              Criar apps com design e tecnologia com alma. Acreditamos que a melhor tecnologia é aquela que você
-              não percebe — ela simplesmente funciona, encanta e se torna parte do seu dia a dia.
-            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <span className="px-4 py-2 bg-primary/10 rounded-full text-foreground/90">Criatividade</span>
+              <span className="px-4 py-2 bg-primary/10 rounded-full text-foreground/90">Simplicidade</span>
+              <span className="px-4 py-2 bg-primary/10 rounded-full text-foreground/90">Emoção</span>
+            </div>
           </div>
 
           {/* Values Grid */}

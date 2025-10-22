@@ -9,49 +9,42 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* MontBros Color System */
-    --background: 156 76% 6%; /* #071410 - Deep forest dark */
-    --foreground: 100 29% 88%; /* #DCE6D6 - Soft light */
+    --background: 160 42% 6%; /* #071410 */
+    --foreground: 100 28% 87%; /* #DCE6D6 */
 
-    --card: 156 60% 8%;
-    --card-foreground: 100 29% 88%;
+    --card: 104 50% 5%; /* #0B1408 */
+    --card-foreground: 100 28% 87%;
 
-    --popover: 156 70% 7%;
-    --popover-foreground: 100 29% 88%;
+    --popover: 104 50% 5%;
+    --popover-foreground: 100 28% 87%;
 
-    --primary: 92 50% 41%; /* #6A9E35 - Vibrant green */
-    --primary-foreground: 156 76% 6%;
+    --primary: 92 50% 41%; /* #6A9E35 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 156 40% 12%;
-    --secondary-foreground: 100 29% 88%;
+    --secondary: 104 50% 8%;
+    --secondary-foreground: 100 28% 87%;
 
-    --muted: 156 30% 15%;
-    --muted-foreground: 100 15% 65%;
+    --muted: 90 14% 68%; /* #A9B7A2 */
+    --muted-foreground: 90 14% 68%;
 
-    --accent: 92 50% 41%;
-    --accent-foreground: 156 76% 6%;
+    --accent: 100 28% 87%;
+    --accent-foreground: 160 42% 6%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 100 29% 88%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 100 28% 87%;
 
-    --border: 156 30% 18%;
-    --input: 156 30% 18%;
+    --border: 160 42% 12%;
+    --input: 160 42% 12%;
     --ring: 92 50% 41%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(92, 50%, 41%), hsl(92, 55%, 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(156, 76%, 6%), hsl(156, 70%, 8%));
-    --gradient-subtle: linear-gradient(135deg, hsl(156, 60%, 8%), hsl(156, 50%, 10%));
-
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(92 50% 41% / 0.15);
-    --shadow-card: 0 10px 40px -10px hsl(92 50% 41% / 0.2);
-    --shadow-elegant: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
-
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Custom tokens */
+    --gradient-subtle: linear-gradient(180deg, hsl(160 42% 6%), hsl(104 50% 5%));
+    --shadow-elegant: 0 4px 24px -4px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 8px 32px -8px rgba(106, 158, 53, 0.15);
+    --shadow-glow: 0 0 24px rgba(106, 158, 53, 0.2);
+    --transition-smooth: all 0.18s ease;
   }
 }
 
@@ -62,6 +55,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-inter;
+    font-size: 17px;
+    line-height: 1.55;
   }
 
   html {
@@ -74,14 +69,6 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-
-  .gradient-dark {
-    background: var(--gradient-dark);
-  }
-
   .gradient-subtle {
     background: var(--gradient-subtle);
   }
@@ -100,9 +87,5 @@ All colors MUST be HSL.
 
   .transition-smooth {
     transition: var(--transition-smooth);
-  }
-
-  .transition-bounce {
-    transition: var(--transition-bounce);
   }
 }
