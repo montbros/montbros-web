@@ -1,0 +1,94 @@
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
+
+  const navItems = [
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "Projects", id: "projects" },
+    { label: "Philosophy", id: "philosophy" },
+    { label: "Contact", id: "contact" },
+  ];
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
+        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-elegant" : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-xl md:text-2xl font-bold tracking-tight hover:text-primary transition-smooth"
+          >
+            MontBros
+          </button>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <Button
+                key={item.id}
+                variant="ghost"
+                onClick={() => scrollToSection(item.id)}
+                className="text-foreground/80 hover:text-primary hover:bg-primary/10 transition-smooth"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-smooth"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-card border-t border-border animate-fade-in">
+          <div className="container mx-auto px-4 py-4 space-y-2">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-smooth"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
