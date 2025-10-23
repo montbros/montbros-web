@@ -20,9 +20,16 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const navItems = [
-    { label: "Projects", path: "/projects" },
-    { label: "About", path: "/about" },
+    { label: "Projects", id: "projects" },
+    { label: "About", id: "about" },
   ];
 
   return (
@@ -45,12 +52,12 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Button
-                key={item.path}
+                key={item.id}
                 variant="ghost"
-                asChild
-                className="text-foreground/80 hover:text-primary hover:bg-primary/10 transition-smooth"
+                onClick={() => scrollToSection(item.id)}
+                className="text-foreground/80 hover:text-primary hover:bg-primary/10 transition-smooth cursor-pointer"
               >
-                <Link to={item.path}>{item.label}</Link>
+                {item.label}
               </Button>
             ))}
           </div>
@@ -71,13 +78,13 @@ const Navbar = () => {
         <div className="md:hidden bg-card border-t border-border animate-fade-in">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className="block w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-smooth"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
