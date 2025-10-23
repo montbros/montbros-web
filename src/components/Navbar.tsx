@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,17 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
     }
   };
 
@@ -54,7 +66,7 @@ const Navbar = () => {
               <Button
                 key={item.id}
                 variant="ghost"
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className="text-foreground/80 hover:text-primary hover:bg-primary/10 transition-smooth cursor-pointer"
               >
                 {item.label}
@@ -80,7 +92,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className="block w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-smooth"
               >
                 {item.label}
