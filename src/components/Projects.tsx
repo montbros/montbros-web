@@ -47,13 +47,13 @@ const Projects = () => {
           <div className="text-center pt-8 animate-fade-in">
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Quer conversar sobre um projeto?
+                Explore os projetos
               </h3>
               <p className="text-foreground/70 mb-6">
-                Respostas objetivas, prazos realistas e obsessão por detalhes.
+                Produtos autorais, foco em experiência.
               </p>
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
-                <Link to="/contact">Enviar mensagem</Link>
+                <Link to="/projects">Abrir Projects</Link>
               </Button>
             </div>
           </div>

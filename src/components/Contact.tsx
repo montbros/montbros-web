@@ -20,7 +20,7 @@ const Contact = () => {
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    toast.success("Mensagem enviada com sucesso!", {
+    toast.success("Obrigado! Vamos ler com calma.", {
       description: "Responderemos em breve.",
       icon: <CheckCircle className="w-5 h-5" />,
     });
@@ -43,11 +43,11 @@ const Contact = () => {
           {/* Header */}
           <div className="text-center space-y-4 animate-fade-in">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-              Vamos <span className="text-primary">Conversar</span>
+              Contato
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Tem uma ideia? Quer colaborar? Ou só dizer oi? Adoraríamos ouvir você.
+              Preferimos apresentar projetos e novidades por aqui. Caso precise falar com a MontBros, use o formulário abaixo.
             </p>
           </div>
 

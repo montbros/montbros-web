@@ -1,15 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Heart, Sparkles, Code } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const AboutPage = () => {
   const values = ["Criatividade", "Simplicidade", "Emoção"];
-  
-  const timeline = [
-    { year: "2024", event: "Fundação da MontBros" },
-    { year: "2024", event: "Primeiro app publicado: Tasted" },
-    { year: "2025", event: "Em desenvolvimento: Jogatina" },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -20,10 +14,10 @@ const AboutPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                Dois irmãos. Um estúdio.
+                Sobre a MontBros
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                Um designer e um desenvolvedor criando apps iOS com propósito e alma autoral.
+                Estúdio independente criando apps iOS com design emocional e identidade autoral.
               </p>
             </div>
           </div>
@@ -32,9 +26,9 @@ const AboutPage = () => {
         {/* Values */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto space-y-12">
+            <div className="max-w-4xl mx-auto">
               <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-card">
-                <div className="flex items-center gap-3 mb-8">
+                <div className="flex items-center gap-3 mb-8 justify-center">
                   <Heart className="w-8 h-8 text-primary" />
                   <h2 className="text-2xl md:text-3xl font-semibold">Valores</h2>
                 </div>
@@ -48,40 +42,6 @@ const AboutPage = () => {
                     </span>
                   ))}
                 </div>
-              </div>
-
-              {/* Timeline */}
-              <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-card">
-                <div className="flex items-center gap-3 mb-8">
-                  <Sparkles className="w-8 h-8 text-primary" />
-                  <h2 className="text-2xl md:text-3xl font-semibold">Jornada</h2>
-                </div>
-                <div className="space-y-6">
-                  {timeline.map((item, index) => (
-                    <div key={index} className="flex gap-6 items-start">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                          <span className="text-primary font-bold">{item.year}</span>
-                        </div>
-                      </div>
-                      <div className="pt-3">
-                        <p className="text-lg text-foreground/80">{item.event}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mission */}
-              <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-card">
-                <div className="flex items-center gap-3 mb-8">
-                  <Code className="w-8 h-8 text-primary" />
-                  <h2 className="text-2xl md:text-3xl font-semibold">Missão</h2>
-                </div>
-                <p className="text-lg text-foreground/80 leading-relaxed text-center">
-                  Criar apps com design e tecnologia com alma. Acreditamos que a melhor tecnologia é aquela que você
-                  não percebe — ela simplesmente funciona, encanta e se torna parte do seu dia a dia.
-                </p>
               </div>
             </div>
           </div>

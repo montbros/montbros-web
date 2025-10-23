@@ -30,23 +30,14 @@ const Hero = () => {
           </p>
 
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Estúdio independente que cria apps iOS com design emocional e atenção obsessiva aos detalhes.
+            Criamos apps iOS com design emocional e atenção aos detalhes.
           </p>
 
-          <div className="pt-4 md:pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="pt-4 md:pt-8 flex justify-center">
             <Button
               asChild
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth"
-            >
-              <Link to="/contact">Fale com a MontBros</Link>
-            </Button>
-
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-primary/30 hover:border-primary hover:bg-primary/10 transition-smooth"
             >
               <Link to="/projects">Ver projetos</Link>
             </Button>

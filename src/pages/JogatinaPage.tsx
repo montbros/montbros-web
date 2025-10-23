@@ -54,7 +54,7 @@ const JogatinaPage = () => {
                     variant="outline"
                     className="border-primary/30 hover:border-primary hover:bg-primary/10"
                   >
-                    <Link to="/contact">Saiba mais</Link>
+                    <Link to="/projects">Ver projetos</Link>
                   </Button>
                 </div>
 
