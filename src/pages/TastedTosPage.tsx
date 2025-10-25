@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const TosPage = () => {
+const TastedTosPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -10,29 +10,29 @@ const TosPage = () => {
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                Termos de <span className="text-primary">Serviço</span>
+                Tasted: <span className="text-primary">Termos de Serviço</span>
               </h1>
               <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             </div>
 
             <div className="prose prose-lg prose-invert max-w-none space-y-6">
               <p className="text-foreground/90 leading-relaxed">
-                Ao utilizar os aplicativos e serviços da MontBros, você concorda com os seguintes termos de serviço.
+                Ao utilizar o Tasted: Drink Notes, você concorda com os seguintes termos de serviço.
               </p>
 
               <h2 className="text-2xl font-semibold text-foreground mt-8">Aceitação dos Termos</h2>
               <p className="text-foreground/80">
-                Ao acessar e usar nossos aplicativos, você aceita estar vinculado a estes termos de serviço.
+                Ao baixar e usar o Tasted, você aceita estar vinculado a estes termos de serviço.
               </p>
 
-              <h2 className="text-2xl font-semibold text-foreground mt-8">Uso dos Serviços</h2>
+              <h2 className="text-2xl font-semibold text-foreground mt-8">Uso do Aplicativo</h2>
               <p className="text-foreground/80">
-                Você concorda em usar nossos serviços apenas para fins legais e de acordo com estes termos.
+                O Tasted é fornecido para uso pessoal e não comercial. Você concorda em usar o aplicativo apenas para registrar suas próprias experiências com drinks.
               </p>
 
               <h2 className="text-2xl font-semibold text-foreground mt-8">Propriedade Intelectual</h2>
               <p className="text-foreground/80">
-                Todo o conteúdo dos aplicativos MontBros é protegido por direitos autorais e propriedade intelectual.
+                O design, código e todos os elementos do Tasted são protegidos por direitos autorais da MontBros.
               </p>
 
               <h2 className="text-2xl font-semibold text-foreground mt-8">Modificações</h2>
@@ -42,7 +42,7 @@ const TosPage = () => {
 
               <h2 className="text-2xl font-semibold text-foreground mt-8">Contato</h2>
               <p className="text-foreground/80">
-                Para dúvidas sobre estes termos, entre em contato através da página de contato.
+                Para dúvidas sobre estes termos, entre em contato através da página de contato da MontBros.
               </p>
             </div>
           </div>
@@ -53,4 +53,4 @@ const TosPage = () => {
   );
 };
 
-export default TosPage;
+export default TastedTosPage;

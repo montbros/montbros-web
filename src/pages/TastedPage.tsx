@@ -121,14 +121,14 @@ const TastedPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto flex justify-center gap-8 text-sm">
               <a
-                href="/privacy"
+                href="/projects/tasted/privacy"
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
                 Política de Privacidade
               </a>
               <span className="text-muted-foreground">•</span>
               <a
-                href="/tos"
+                href="/projects/tasted/tos"
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
                 Termos de Serviço
