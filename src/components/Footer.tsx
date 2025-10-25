@@ -7,11 +7,10 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Brand */}
-          <div className="text-center space-y-2">
+          <div className="text-center">
             <h3 className="text-2xl font-bold">
               Mont<span className="text-primary">Bros</span>
             </h3>
-            <p className="text-sm text-muted-foreground">Small Studio, Big Soul.</p>
           </div>
 
           {/* Links */}
