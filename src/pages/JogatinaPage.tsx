@@ -118,17 +118,17 @@ const JogatinaPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto flex justify-center gap-8 text-sm">
               <a
-                href="#"
+                href="/privacy"
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
                 Política de Privacidade
               </a>
               <span className="text-muted-foreground">•</span>
               <a
-                href="#"
+                href="/tos"
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                Termos de Uso
+                Termos de Serviço
               </a>
             </div>
           </div>

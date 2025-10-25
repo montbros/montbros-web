@@ -1,6 +1,4 @@
-import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.png";
 
 const Hero = () => {
@@ -25,21 +23,18 @@ const Hero = () => {
             Mont<span className="text-primary">Bros</span>
           </h1>
 
-          <p className="text-xl md:text-3xl lg:text-4xl font-light text-foreground/90 tracking-wide">
-            Small Studio, Big Soul.
-          </p>
-
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Criamos apps iOS com design emocional e atenção aos detalhes.
-          </p>
-
           <div className="pt-4 md:pt-8 flex justify-center">
             <Button
-              asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth"
+              onClick={() => {
+                const element = document.getElementById('projects');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth cursor-pointer"
             >
-              <Link to="/projects">Ver projetos</Link>
+              Ver projetos
             </Button>
           </div>
         </div>

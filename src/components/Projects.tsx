@@ -1,6 +1,4 @@
 import ProjectCard from "./ProjectCard";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import tastedApp from "@/assets/tasted-app.png";
 import jogatinaApp from "@/assets/jogatina-app.png";
 
@@ -31,9 +29,6 @@ const Projects = () => {
               Nossos <span className="text-primary">Projetos</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Apps criativos desenvolvidos com paixão, cuidado e atenção aos detalhes
-            </p>
           </div>
 
           {/* Projects Grid */}
@@ -41,21 +36,6 @@ const Projects = () => {
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center pt-8 animate-fade-in">
-            <div className="bg-card border border-border rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Explore os projetos
-              </h3>
-              <p className="text-foreground/70 mb-6">
-                Produtos autorais, foco em experiência.
-              </p>
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
-                <Link to="/projects">Abrir Projects</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>

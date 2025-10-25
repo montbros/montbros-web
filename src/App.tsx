@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import TastedPage from "./pages/TastedPage";
 import JogatinaPage from "./pages/JogatinaPage";
 import ContactPage from "./pages/ContactPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TosPage from "./pages/TosPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/projects/tasted" element={<TastedPage />} />
           <Route path="/projects/jogatina" element={<JogatinaPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/tos" element={<TosPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
