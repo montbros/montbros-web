@@ -1,0 +1,40 @@
+{
+  "common": {
+    "learnMore": "Saiba mais",
+    "comingSoon": "Em Breve",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade",
+    "tos": "Termos de Serviço",
+    "viewProjects": "Ver projetos"
+  },
+  "navbar": {
+    "projects": "Projetos"
+  },
+  "hero": {
+    "title": "MontBros Studio",
+    "subtitle": "Small Studio, Big Soul",
+    "description": "Estúdio independente que cria apps iOS criativos com design emocional e alma."
+  },
+  "projects": {
+    "title": "Nossos Projetos",
+    "tasted": {
+      "title": "Tasted: Drink Notes",
+      "description": "Lembre-se dos melhores drinks que você já teve.",
+      "details": "Salve notas, fotos e locais em um diário feito para quem ama descobrir e guardar bons momentos.",
+      "features": {
+        "photoNotes": "Registro de drinks com fotos e notas",
+        "organization": "Organização por locais e tipos",
+        "premium": "Experiência premium sem anúncios"
+      },
+      "appStore": "Ver na App Store",
+      "appStoreUrl": "https://apps.apple.com/br/app/tasted-drink-notes/id6744488294",
+      "screenshots": "Screenshots",
+      "screenshotAlt": "Captura de tela do Tasted"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "madeWith": "Feito com",
+    "byBrothers": "por dois irmãos"
+  }
+}

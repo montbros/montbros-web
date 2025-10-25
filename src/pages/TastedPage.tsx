@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Check } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Carousel,
   CarouselContent,
@@ -10,15 +11,15 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import tastedApp from "@/assets/tasted-app.png";
+import tasted_1 from "@/assets/tasted_1.png";
+import tasted_2 from "@/assets/tasted_2.png";
+import tasted_3 from "@/assets/tasted_3.png";
+import tasted_4 from "@/assets/tasted_4.png";
+import tasted_5 from "@/assets/tasted_5.png";
 
 const TastedPage = () => {
-  const features = [
-    "Registro de drinks com fotos e notas",
-    "Organização por locais e tipos",
-    "Experiência premium sem anúncios",
-  ];
-
-  const screenshots = [tastedApp, tastedApp, tastedApp];
+  const { t } = useLanguage();
+  const screenshots = [tasted_1, tasted_2, tasted_3, tasted_4, tasted_5];
 
   return (
     <div className="min-h-screen">
@@ -28,56 +29,36 @@ const TastedPage = () => {
         <section className="py-20 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+              <img
+                src={tastedApp}
+                alt="Tasted app icon"
+                className="w-24 h-24 mx-auto rounded-2xl shadow-elegant"
+              />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                Tasted: Drink Notes
+                {t("projects.tasted.title")}
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                Notas de drinks com foco sensorial e design elegante.
+                {t("projects.tasted.description")}
+                <br/>
+                <br/>
+                {t("projects.tasted.details")}
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Features */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto space-y-12">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                  <div className="space-y-6">
-                    {features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-3">
-                        <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                        <p className="text-lg text-foreground/80">{feature}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group"
-                  >
-                    <a
-                      href="https://apps.apple.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      Ver na App Store
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
-                    </a>
-                  </Button>
-                </div>
-
-                <div className="relative">
-                  <img
-                    src={tastedApp}
-                    alt="Tasted app mockup"
-                    className="w-full rounded-2xl shadow-elegant"
-                  />
-                </div>
-              </div>
+              
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group"
+              >
+                <a
+                  href={t("projects.tasted.appStoreUrl")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+{t("projects.tasted.appStore")}
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
+                </a>
+              </Button>
             </div>
           </div>
         </section>
@@ -87,12 +68,13 @@ const TastedPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Screenshots
+                {t("projects.tasted.screenshots")}
               </h2>
               <Carousel
                 opts={{
                   align: "start",
-                  loop: true,
+                  loop: false,
+                  dragFree: true,
                 }}
                 className="w-full"
               >
@@ -102,7 +84,7 @@ const TastedPage = () => {
                       <div className="p-4">
                         <img
                           src={screenshot}
-                          alt={`Tasted screenshot ${index + 1}`}
+                          alt={`${t("projects.tasted.screenshotAlt")} ${index + 1}`}
                           className="w-full rounded-2xl shadow-elegant"
                         />
                       </div>
@@ -124,14 +106,14 @@ const TastedPage = () => {
                 href="/projects/tasted/privacy"
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                Política de Privacidade
+                {t("common.privacy")}
               </a>
               <span className="text-muted-foreground">•</span>
               <a
                 href="/projects/tasted/tos"
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                Termos de Serviço
+                {t("common.tos")}
               </a>
             </div>
           </div>

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section
       id="home"
@@ -34,7 +37,7 @@ const Hero = () => {
               }}
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow transition-smooth cursor-pointer"
             >
-              Ver projetos
+{t("common.viewProjects")}
             </Button>
           </div>
         </div>
